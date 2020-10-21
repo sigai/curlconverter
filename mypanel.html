@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="curl命令转换器">
+    <meta name="author" content="房天生">
+
+    <title>curl命令转换器</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/codemirror.css">
+    <script src="js/codemirror.js"></script>
+
+</head>
+
+<body>
+    <div class="container"></div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div style="display: inline-block;">
+                    样例:
+                    <a id="get-example" href="#">GET请求</a>
+                    -
+                    <a id="post-example" href="#">POST请求</a>
+                    -
+                    <a id="basic-auth-example" href="#">Basic Auth请求</a>
+                </div>
+                <textarea id="curl-code" class="code" placeholder="此处粘贴curl命令"></textarea>
+            </div>
+            <div class="col-sm-6">
+                <div class="col-lg-12 button-container">
+                    <label for="language">
+                        目标语言
+                    </label>
+                    <select class="form-control" id="language">
+                        <option value="browser">Browser (fetch)</option>
+                        <option value="dart">Dart</option>
+                        <option value="elixir">Elixir</option>
+                        <option value="go">Go</option>
+                        <option value="json">JSON</option>
+                        <option value="node-fetch">Node.js (fetch)</option>
+                        <option value="node-request">Node.js (request)</option>
+                        <option value="matlab">MATLAB</option>
+                        <option value="php">PHP</option>
+                        <option value="python" selected="selected">Python</option>
+                        <option value="r">R</option>
+                        <option value="rust">Rust</option>
+                        <option value="strest">Strest</option>
+                    </select>
+                </div>
+                <div style="display: none;" id="issue-promo">curl命令格式可能有问题.
+                </div>
+                <textarea id="generated-code" class="code"></textarea>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="js/main.min.js"></script>
+    <script src="js/python.js"></script>
+
+</body>
+
+</html>
