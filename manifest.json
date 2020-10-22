@@ -2,11 +2,11 @@
 	// 清单文件的版本，这个必须写，而且必须是2
 	"manifest_version": 2,
 	// 插件的名称
-	"name": "curlconverter",
+	"name": "爬虫开发工具",
 	// 插件的版本
 	"version": "1.0.0",
 	// 插件描述
-	"description": "curl命令转python requests代码",
+	"description": "常用的爬虫开发工具收集",
 	// 图标，一般偷懒全部用一个尺寸的也没问题
 	"icons": {
 		"16": "img/icon.png",
@@ -82,7 +82,8 @@
 		"js/inject.js",
 		"js/main.min.js",
 		"js/codemirror.js",
-		"js/python.js"
+		"js/python.js",
+		"js/autoTextarea.js"
 	],
 	// 插件主页，这个很重要，不要浪费了这个免费广告位
 	"homepage_url": "https://www.baidu.com",
