@@ -1,6 +1,7 @@
 # Spider Dev Tools
 
-1. curlconverter
-面板页面增加cURL面板，修改https://curl.trillworks.com/添加到面板中
+gather spider development tools：
+1. cURL to python requests script
+2. xpath helper https://github.com/google/xpaf
 
-2.  增加xpath helper功能
+*for learning JavaScript
