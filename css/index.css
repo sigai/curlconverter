@@ -1,0 +1,49 @@
+
+.title {
+    font-size: 12px;
+    font-weight: normal;
+}
+.url-content {
+    display: flex;
+    height: 200px;
+    margin: 10px;
+}
+.url {
+    flex: 1;
+    margin:10px;
+}
+.url:nth-child(2) {
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+.result {
+    margin-top: 20px;
+}
+.rows {
+    display: flex;
+    padding: 10px;
+    word-break: break-all;
+    font-size: 12px;
+}
+.rows:nth-child(2n+1) {
+    background-color: #efefef;
+}
+.host {
+    background-color: #faffb9 !important;
+}
+.key {
+    width: 150px;
+    flex-shrink: 0;
+}
+.value {
+    flex: 1;
+    margin-left: 50px;
+}
+.value input {
+    width: 100%;
+}
+.active {
+    color: #ff0000;
+    font-weight: bold;
+}

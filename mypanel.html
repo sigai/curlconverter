@@ -15,50 +15,48 @@
 </head>
 
 <body>
-    <div class="container"></div>
-        <div class="row">
-            <div class="col-sm-6">
-                <div style="display: inline-block;">
-                    examples:
-                    <a id="get-example" href="#">GET requests</a>
-                    -
-                    <a id="post-example" href="#">POST requests</a>
-                    -
-                    <a id="basic-auth-example" href="#">Basic Auth requests</a>
-                </div>
-                <textarea id="curl-code" class="code" placeholder="Paste cURL command here..."></textarea>
-            </div>
-            <div class="col-sm-6">
-                <div class="col-lg-12 button-container">
-                    <label for="language">
-                        dest
-                    </label>
-                    <select class="form-control" id="language">
-                        <!-- <option value="browser">Browser (fetch)</option>
-                        <option value="dart">Dart</option>
-                        <option value="elixir">Elixir</option>
-                        <option value="go">Go</option>
-                        <option value="json">JSON</option>
-                        <option value="node-fetch">Node.js (fetch)</option>
-                        <option value="node-request">Node.js (request)</option>
-                        <option value="matlab">MATLAB</option>
-                        <option value="php">PHP</option> -->
-                        <option value="python" selected="selected">Python</option>
-                        <!-- <option value="r">R</option>
-                        <option value="rust">Rust</option>
-                        <option value="strest">Strest</option> -->
-                    </select>
-                </div>
-                <div style="display: none;" id="issue-promo">curl commands error.
-                </div>
-                <textarea id="generated-code" class="code"></textarea>
-
-            </div>
+<div class="row">
+    <div class="col-sm-6">
+        <div style="display: inline-block;">
+            examples:
+            <a id="get-example" href="#">GET requests</a>
+            -
+            <a id="post-example" href="#">POST requests</a>
+            -
+            <a id="basic-auth-example" href="#">Basic Auth requests</a>
         </div>
+        <textarea id="curl-code" class="code" placeholder="Paste cURL command here..."></textarea>
+    </div>
+    <div class="col-sm-6">
+        <div class="col-lg-12 button-container">
+            <label for="language">
+                dest
+            </label>
+            <select class="form-control" id="language">
+                <!-- <option value="browser">Browser (fetch)</option>
+                <option value="dart">Dart</option>
+                <option value="elixir">Elixir</option>
+                <option value="go">Go</option>
+                <option value="json">JSON</option>
+                <option value="node-fetch">Node.js (fetch)</option>
+                <option value="node-request">Node.js (request)</option>
+                <option value="matlab">MATLAB</option>
+                <option value="php">PHP</option> -->
+                <option value="python" selected="selected">Python</option>
+                <!-- <option value="r">R</option>
+                <option value="rust">Rust</option>
+                <option value="strest">Strest</option> -->
+            </select>
+        </div>
+        <div style="display: none;" id="issue-promo">curl commands error.
+        </div>
+        <textarea id="generated-code" class="code"></textarea>
 
     </div>
-    <script src="js/main.min.js"></script>
-    <script src="js/python.js"></script>
+</div>
+
+<script src="js/main.min.js"></script>
+<script src="js/python.js"></script>
 
 </body>
 
