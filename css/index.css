@@ -1,10 +1,11 @@
-body {
-    padding: 15px;
-    box-sizing: border-box;
-}
+/*body {*/
+/*    padding: 15px;*/
+/*    box-sizing: border-box;*/
+/*}*/
 .title {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: normal;
+    display: flex;
 }
 .url-content {
     display: flex;
@@ -16,23 +17,39 @@ body {
 .url:nth-child(2) {
     margin-left: 10px;
 }
+.config {
+    font-size: 12px;
+    margin-left: 15px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+.config label {
+color:red; cursor:pointer; margin:3px 0; vertical-align: middle;
+}
+.config input {
+    display: inline-block; vertical-align: middle; margin-bottom: 3px;
+}
+
 .result {
     margin-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
-.row {
+.rows {
     display: flex;
-    padding: 10px;
+    padding: 1px;
     word-break: break-all;
     font-size: 12px;
 }
-.row:nth-child(2n+1) {
+.rows:nth-child(2n+1) {
     background-color: #efefef;
 }
 .host {
     background-color: #faffb9 !important;
 }
 .key {
-    width: 120px;
+    width: 150px;
     flex-shrink: 0;
 }
 .value {

@@ -19,22 +19,27 @@
  * @license Apache License, Version 2.0.
  */
 
-// function handleRequest(request, sender, cb) {
-//     // Simply relay the request. This lets content.js talk to bar.js.
-//     chrome.tabs.sendMessage(sender.tab.id, request, cb);
-//     return true;
-// }
-//
-// chrome.runtime.onMessage.addListener(handleRequest);
-//
-// chrome.browserAction.onClicked.addListener(function (tab) {
-//     chrome.tabs.sendMessage(tab.id, {type: 'toggleBar'});
-// });
-chrome.browserAction.onClicked.addListener(
-    function () {
-        // Reasonable fallback.
-        window.open(chrome.extension.getURL('index.html'));
 
+var develop_tools_id = null;
+
+function showPage(tab) {
+    if (develop_tools_id) {
+        chrome.tabs.update(develop_tools_id, {
+            active: true
+        });
+    } else {
+        chrome.tabs.create({
+                url: chrome.extension.getURL("../index.html"),
+                selected: true
+            },
+            function (tab) {
+                develop_tools_id = tab.id;
+            })
+    }
+}
+
+chrome.browserAction.onClicked.addListener(
+    function (tab) {
+        showPage(tab);
     }
 );
-

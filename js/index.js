@@ -5,7 +5,8 @@ new Vue({
         value_2: '',
         host_1: '',
         host_2: '',
-        params: {}
+        params: {},
+        needDecode: false
     },
     methods: {
         confirm () {
@@ -31,10 +32,9 @@ new Vue({
                             params[itemArr[0]][name] = itemArr[1];
                         }
                     }
-
+            
                 })
             }
-            console.log("loading..", this)
             return { params, host };
         },
         getUrlParams () {

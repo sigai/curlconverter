@@ -12,6 +12,10 @@
         <textarea class="url" v-model="value_1" @input="confirm"></textarea>
         <textarea class="url" v-model="value_2" @input="confirm"></textarea>
     </div>
+    <div class="config">
+        <input type="checkbox" v-model="needDecode"/>
+        <span>是否需要decode</span>
+    </div>
     <div class="result">
         <div
                 v-if="host_1 || host_2"
@@ -37,12 +41,14 @@
             <div
                     :class="{ value: true, active: value_1 && value_2 && item.value_1 !== item.value_2 }"
             >
-                {{ item.value_1 }}
+                <span v-if="!needDecode">{{ item.value_1 }}</span>
+                <span v-if="needDecode">{{ decodeURIComponent(item.value_1) }}</span>
             </div>
             <div
                     :class="{ value: true, active: value_1 && value_2 && item.value_1 !== item.value_2 }"
             >
-                {{ item.value_2 }}
+                <span v-if="!needDecode">{{ item.value_2 }}</span>
+                <span v-if="needDecode">{{ decodeURIComponent(item.value_2) }}</span>
             </div>
         </div>
     </div>

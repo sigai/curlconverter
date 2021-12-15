@@ -7,56 +7,106 @@
     <meta name="description" content="curl to requests">
     <meta name="author" content="fangtiansheng">
 
-    <title>curl to requests</title>
+    <title>curl to requests & URL compare</title>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/index.css">
     <script src="js/codemirror.js"></script>
 
 </head>
 
 <body>
-<div class="row">
-    <div class="col-sm-6">
-        <div style="display: inline-block;">
-            examples:
-            <a id="get-example" href="#">GET requests</a>
-            -
-            <a id="post-example" href="#">POST requests</a>
-            -
-            <a id="basic-auth-example" href="#">Basic Auth requests</a>
+<div id="app">
+    <div class="row">
+        <div class="col-sm-6">
+            <div style="display: inline-block;">
+                examples:
+                <a id="get-example" href="#">GET requests</a>
+                -
+                <a id="post-example" href="#">POST requests</a>
+                -
+                <a id="basic-auth-example" href="#">Basic Auth requests</a>
+            </div>
+            <textarea id="curl-code" class="code" placeholder="Paste cURL command here..."></textarea>
         </div>
-        <textarea id="curl-code" class="code" placeholder="Paste cURL command here..."></textarea>
+        <div class="col-sm-6">
+            <div class="col-lg-12 button-container">
+                <label for="language">
+                    dest
+                </label>
+                <select class="form-control" id="language">
+                    <option value="python" selected="selected">Python</option>
+                </select>
+            </div>
+            <div style="display: none;" id="issue-promo">curl commands error.
+            </div>
+            <textarea id="generated-code" class="code"></textarea>
+
+        </div>
     </div>
-    <div class="col-sm-6">
-        <div class="col-lg-12 button-container">
-            <label for="language">
-                dest
-            </label>
-            <select class="form-control" id="language">
-                <!-- <option value="browser">Browser (fetch)</option>
-                <option value="dart">Dart</option>
-                <option value="elixir">Elixir</option>
-                <option value="go">Go</option>
-                <option value="json">JSON</option>
-                <option value="node-fetch">Node.js (fetch)</option>
-                <option value="node-request">Node.js (request)</option>
-                <option value="matlab">MATLAB</option>
-                <option value="php">PHP</option> -->
-                <option value="python" selected="selected">Python</option>
-                <!-- <option value="r">R</option>
-                <option value="rust">Rust</option>
-                <option value="strest">Strest</option> -->
-            </select>
+    <div class="config">
+        <label for="decode">是否需要decode</label>
+        <input type="checkbox" v-model="needDecode" id="decode"/>
+    </div>
+    <div class="row">
+        <div class="url-content">
+            <div class="col-sm-6">
+                <textarea class="url code" v-model="value_1" @input="confirm" placeholder="请输入URL地址：A"></textarea>
+            </div>
+            <div class="col-sm-6">
+                <textarea class="url code" v-model="value_2" @input="confirm" placeholder="请输入URL地址：B"></textarea>
+            </div>
         </div>
-        <div style="display: none;" id="issue-promo">curl commands error.
-        </div>
-        <textarea id="generated-code" class="code"></textarea>
+    </div>
+    <div class="row">
 
     </div>
+    <div class="row">
+        <div class="result" style="margin-top: 20px;">
+            <div
+                    v-if="host_1 || host_2"
+                    class="rows host"
+            >
+                <div class="key">域名</div>
+                <div
+                        :class="{ value: true, active: host_1 && host_2 && host_1 !== host_2 }"
+                >
+                    {{ host_1 }}
+                </div>
+                <div
+                        :class="{ value: true, active: host_1 && host_2 && host_1 !== host_2 }"
+                >
+                    {{ host_2 }}
+                </div>
+            </div>
+            <div
+                    class="rows"
+                    v-for="(item, index) in params"
+            >
+                <div class="key">{{ index }}</div>
+                <div
+                        :class="{ value: true, active: value_1 && value_2 && item.value_1 !== item.value_2 }"
+                >
+                    <span v-if="!needDecode">{{ item.value_1 }}</span>
+                    <span v-if="needDecode">{{ decodeURIComponent(item.value_1) }}</span>
+                </div>
+                <div
+                        :class="{ value: true, active: value_1 && value_2 && item.value_1 !== item.value_2 }"
+                >
+                    <span v-if="!needDecode">{{ item.value_2 }}</span>
+                    <span v-if="needDecode">{{ decodeURIComponent(item.value_2) }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 <script src="js/main.min.js"></script>
 <script src="js/python.js"></script>
+
 
 </body>
 
