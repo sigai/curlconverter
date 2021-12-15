@@ -1,39 +1,38 @@
-
+body {
+    padding: 15px;
+    box-sizing: border-box;
+}
 .title {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: normal;
 }
 .url-content {
     display: flex;
-    height: 200px;
-    margin: 10px;
+    height: 150px;
 }
 .url {
     flex: 1;
-    margin:10px;
 }
 .url:nth-child(2) {
     margin-left: 10px;
-    margin-right: 10px;
-
 }
 .result {
     margin-top: 20px;
 }
-.rows {
+.row {
     display: flex;
     padding: 10px;
     word-break: break-all;
     font-size: 12px;
 }
-.rows:nth-child(2n+1) {
+.row:nth-child(2n+1) {
     background-color: #efefef;
 }
 .host {
     background-color: #faffb9 !important;
 }
 .key {
-    width: 150px;
+    width: 120px;
     flex-shrink: 0;
 }
 .value {

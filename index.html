@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="./css/index.css"/>
+</head>
+<body>
+<div id="app">
+    <h1 class="title">请输入URL地址：</h1>
+    <div class="url-content">
+        <textarea class="url" v-model="value_1" @input="confirm"></textarea>
+        <textarea class="url" v-model="value_2" @input="confirm"></textarea>
+    </div>
+    <div class="result">
+        <div
+                v-if="host_1 || host_2"
+                class="row host"
+        >
+            <div class="key">域名</div>
+            <div
+                    :class="{ value: true, active: host_1 && host_2 && host_1 !== host_2 }"
+            >
+                {{ host_1 }}
+            </div>
+            <div
+                    :class="{ value: true, active: host_1 && host_2 && host_1 !== host_2 }"
+            >
+                {{ host_2 }}
+            </div>
+        </div>
+        <div
+                class="row"
+                v-for="(item, index) in params"
+        >
+            <div class="key">{{ index }}</div>
+            <div
+                    :class="{ value: true, active: value_1 && value_2 && item.value_1 !== item.value_2 }"
+            >
+                {{ item.value_1 }}
+            </div>
+            <div
+                    :class="{ value: true, active: value_1 && value_2 && item.value_1 !== item.value_2 }"
+            >
+                {{ item.value_2 }}
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="./js/vue.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
+</body>
+</html>

@@ -34,6 +34,7 @@ new Vue({
 
                 })
             }
+            console.log("loading..", this)
             return { params, host };
         },
         getUrlParams () {
