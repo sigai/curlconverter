@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Spider Devtools",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "spider dev tools",
   "icons": {
     "16": "img/icon.png",
@@ -36,8 +36,7 @@
     }
   ],
   "permissions": [
-    "tabs",
-    "contextMenus"
+    "tabs"
   ],
   "web_accessible_resources": [
     "js/inject.js",
